@@ -74,7 +74,7 @@ const shape = new BABYLON.PhysicsShapeConvexHull(
 );
 ```
 
-A convex hull is the most versatile of the physics shapes. A convex object is one where you can draw a line between any two vertices without leaving the shape. While most real-world objects are not convex, for the purposes of physics simulation, this is a great approximation for most objects. The input mesh can be concave - the physics engine will calculate the convex part of the geometry.
+![Convex Shape](/img/features/physics/convex_shape.png) A convex hull is the most versatile of the physics shapes. A convex object is one where you can draw a line between any two vertices without leaving the shape. While most real-world objects are not convex, for the purposes of physics simulation, this is a great approximation for most objects. The input mesh can be concave - the physics engine will calculate the convex part of the geometry. In the above image, the blue mesh is the input geometry, while the white wireframe is the computed convex hull.
 
 ```javascript
 const shape = new BABYLON.PhysicsShapeMesh(
@@ -83,7 +83,7 @@ const shape = new BABYLON.PhysicsShapeMesh(
 );
 ```
 
-A mesh shape is simply a collection of triangles. All the triangles in the input mesh will become triangles in the physics engine. This is a great choice for your static bodies, as generally, those static bodies represent highly concave objects, so this will give the closest match to your render geometry. Be aware that when two complex mesh shapes collide with each other, it might require the physics engine to calculate collisions between a huge number of triangles, which can slow down the simulation.
+![Mesh Shape](/img/features/physics/mesh_shape.png) A mesh shape is simply a collection of triangles. All the triangles in the input mesh will become triangles in the physics engine. This is a great choice for your static bodies, as generally, those static bodies represent highly concave objects, so this will give the closest match to your render geometry. Be aware that when two complex mesh shapes collide with each other, it might require the physics engine to calculate collisions between a huge number of triangles, which can slow down the simulation.
 
 
 ```javascript
@@ -96,5 +96,5 @@ A container shape doesn't have any geometry by itself, however, it does allow an
 
 [The Container has its own page](/features/featuresDeepDive/physics/compounds) for more information.
 
-The following image shows a comparison of the Container, Mesh and Convex Hull shapes, from left to right:
+The following image shows a comparison of a Container (with several child shapes), Mesh and Convex Hull shapes, from left to right:
 ![Comparison](/img/features/physics/shapes_comparison.png)
