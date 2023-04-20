@@ -85,14 +85,13 @@ const shape = new BABYLON.PhysicsShapeMesh(
 
 ![Mesh Shape](/img/features/physics/mesh_shape.png) A mesh shape is simply a collection of triangles. All the triangles in the input mesh will become triangles in the physics engine. This is a great choice for your static bodies, as generally, those static bodies represent highly concave objects, so this will give the closest match to your render geometry. Be aware that when two complex mesh shapes collide with each other, it might require the physics engine to calculate collisions between a huge number of triangles, which can slow down the simulation.
 
-
 ```javascript
 const shape = new BABYLON.PhysicsShapeContainer(
     scene   // scene of the shape
 )
 ```
 
-A container shape doesn't have any geometry by itself, however, it does allow any other shape to be added as a child, with an additional transform. If none of the other shape types are suitable to match your render geometry, you can use a container and add a number of simpler shapes to approximate your visual mesh.
+![Container Shape](/img/features/physics/container_shape.png) A container shape doesn't have any geometry by itself, however, it does allow any other shape to be added as a child, with an additional transform. If none of the other shape types are suitable to match your render geometry, you can use a container and add a number of simpler shapes to approximate your visual mesh. The above picture shows the render mesh in blue and a container with five children which approximate the collision volume of the mesh.
 
 [The Container has its own page](/features/featuresDeepDive/physics/compounds) for more information.
 
